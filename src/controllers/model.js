@@ -5,13 +5,21 @@ export default class Model extends Component {
     const { selectedGlass } = this.props;
 
     return (
-      <div
-        className="model"
-        style={{ backgroundImage: `url('./../images/model.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative' }}
-      >
-        {selectedGlass && (
-          <img src={selectedGlass.url} alt="" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
-        )}
+      <div className="col-md-3">
+        <div
+          className="card"
+          style={{
+            backgroundImage: `url('./../images/model.jpg')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          {selectedGlass && <img src={selectedGlass.url} alt="" />}
+          <div className="card-body">
+            <h4 className="card-title">{selectedGlass.name}</h4>
+            <p className="card-text">{selectedGlass.desc}</p>
+          </div>
+        </div>
       </div>
     );
   }
